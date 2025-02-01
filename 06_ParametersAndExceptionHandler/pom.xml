@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.ervandil</groupId>
-	<artifactId>05_FirstStepsInJavaWithSpringBoot</artifactId>
+	<artifactId>06_ParametersAndExceptionHandler</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>05_FirstStepsInJavaWithSpringBoot</name>
+	<name>06_ParametersAndExceptionHandler</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
