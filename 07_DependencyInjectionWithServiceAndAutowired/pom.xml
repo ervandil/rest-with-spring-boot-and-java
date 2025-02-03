@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.ervandil</groupId>
-	<artifactId>06_ParametersAndExceptionHandler</artifactId>
+	<artifactId>07_DependencyInjectionWithServiceAndAutowired</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>06_ParametersAndExceptionHandler</name>
+	<name>07_DependencyInjectionWithServiceAndAutowired</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
