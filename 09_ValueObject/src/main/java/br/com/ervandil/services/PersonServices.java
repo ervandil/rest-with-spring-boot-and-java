@@ -1,8 +1,10 @@
 package br.com.ervandil.services;
 
 import br.com.ervandil.exceptions.ResourceNotFoundException;
+import br.com.ervandil.mapper.PersonMapper;
 import br.com.ervandil.model.Person;
 import br.com.ervandil.repositories.PersonRepository;
+import br.com.ervandil.vo.v1.PersonVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,22 +19,25 @@ public class PersonServices {
     @Autowired
     PersonRepository repository;
 
-    public Person findById(Long id) {
-        logger.info("Finding one person!");
-        return repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("No records found for this ID"));
-    }
-
-    public List<Person> findAll() {
+    public List<PersonVO> findAll() {
         logger.info("Finding all people!");
-        return repository.findAll();
+        return PersonMapper.INSTANCE.toVOList(repository.findAll());
     }
 
-    public Person create(Person person) {
+    public PersonVO findById(Long id) {
+        logger.info("Finding one person!");
+        var entity = repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("No records found for this ID"));
+        return PersonMapper.INSTANCE.toVO(entity);
+    }
+
+    public PersonVO create(PersonVO person) {
         logger.info("Creating one person!");
-        return repository.save(person);
+        var entity = PersonMapper.INSTANCE.toEntity(person);
+        var vo = PersonMapper.INSTANCE.toVO(repository.save(entity));
+        return vo;
     }
 
-    public Person update(Person person) {
+    public PersonVO update(PersonVO person) {
         logger.info("Updating one person!");
         Person entity = repository.findById(person.getId())
                 .orElseThrow(() -> new ResourceNotFoundException("No records found for this ID"));
@@ -40,7 +45,8 @@ public class PersonServices {
         entity.setLastName(person.getLastName());
         entity.setAddress(person.getAddress());
         entity.setGender(person.getGender());
-        return repository.save(entity);
+        var vo = PersonMapper.INSTANCE.toVO(repository.save(entity));
+        return vo;
     }
 
     public void delete(Long id) {
