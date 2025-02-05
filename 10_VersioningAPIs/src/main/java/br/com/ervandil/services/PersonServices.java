@@ -5,6 +5,7 @@ import br.com.ervandil.mapper.PersonMapper;
 import br.com.ervandil.model.Person;
 import br.com.ervandil.repositories.PersonRepository;
 import br.com.ervandil.vo.v1.PersonVO;
+import br.com.ervandil.vo.v2.PersonVOV2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,6 +35,13 @@ public class PersonServices {
         logger.info("Creating one person!");
         var entity = PersonMapper.INSTANCE.toEntity(person);
         var vo = PersonMapper.INSTANCE.toVO(repository.save(entity));
+        return vo;
+    }
+
+    public PersonVOV2 createV2(PersonVOV2 person) {
+        logger.info("Creating one person V2!");
+        var entity = PersonMapper.INSTANCE.toEntity(person);
+        var vo = PersonMapper.INSTANCE.toVOV2(repository.save(entity));
         return vo;
     }
 
