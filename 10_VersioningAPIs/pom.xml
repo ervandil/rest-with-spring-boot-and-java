@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>br.com.ervandil</groupId>
-    <artifactId>09_ValueObject</artifactId>
+    <artifactId>10_VersioningAPIs</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>09_ValueObject</name>
+    <name>10_VersioningAPIs</name>
     <description>Demo project for Spring Boot</description>
     <url/>
     <licenses>
