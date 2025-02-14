@@ -1,2 +1,0 @@
-INSERT INTO `person`(id, address, first_name, gender, last_name, birth_day) VALUES (3,'Some address in Brasil','Ervandil','Male','Last name 832328',NULL),(4,'Some address in Brasil','Ervandil','Male','Last name 8',NULL),(6,'Some address in Brasil','Ervandil','Male','Last name 8323',NULL),(9,'Some address in Brasil','Ervandil','Male','Last name 8',NULL),(10,'Some address in Brasil','Ervandil','Male','Last name 8','2025-02-05 00:00:00.000000'),(11,'Some address in Brasil','Ervandil 12','Male','Last name 8323',NULL);
-
