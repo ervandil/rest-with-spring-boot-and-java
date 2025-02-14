@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>br.com.ervandil</groupId>
-    <artifactId>11_MigrationSupportWithFlyway</artifactId>
+    <artifactId>15_AddingSwagger</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>11_MigrationSupportWithFlyway</name>
+    <name>15_AddingSwagger</name>
     <description>Demo project for Spring Boot</description>
     <url/>
     <licenses>
@@ -75,6 +75,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>

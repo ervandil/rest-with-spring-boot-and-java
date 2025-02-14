@@ -1,6 +1,7 @@
 package br.com.ervandil.services;
 
 import br.com.ervandil.controllers.PersonController;
+import br.com.ervandil.exceptions.RequiredObjectIsNullException;
 import br.com.ervandil.exceptions.ResourceNotFoundException;
 import br.com.ervandil.mapper.PersonMapper;
 import br.com.ervandil.model.Person;
@@ -40,6 +41,9 @@ public class PersonServices {
     }
 
     public PersonVO create(PersonVO person) {
+        if(person == null){
+            throw new RequiredObjectIsNullException();
+        }
         logger.info("Creating one person!");
         var entity = PersonMapper.INSTANCE.toEntity(person);
         var vo = PersonMapper.INSTANCE.toVO(repository.save(entity));
@@ -55,6 +59,9 @@ public class PersonServices {
     }
 
     public PersonVO update(PersonVO person) {
+        if(person == null){
+            throw new RequiredObjectIsNullException();
+        }
         logger.info("Updating one person!");
         Person entity = repository.findById(person.getKey())
                 .orElseThrow(() -> new ResourceNotFoundException("No records found for this ID"));
