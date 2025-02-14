@@ -17,11 +17,14 @@ public interface PersonMapper {
     @Mapping(source = "id", target = "key")
     PersonVO toVO(Person person);
 
+    @Mapping(source = "id", target = "key")
     PersonVOV2 toVOV2(Person person);
 
     @Mapping(source = "key", target = "id")
+    @Mapping(target = "birthDay", ignore = true)
     Person toEntity(PersonVO personVO);
 
+    @Mapping(source = "key", target = "id")
     Person toEntity(PersonVOV2 personVOV2);
 
     List<PersonVO> toVOList(List<Person> users);
